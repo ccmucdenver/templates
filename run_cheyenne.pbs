@@ -1,0 +1,17 @@
+#!/bin/tcsh
+### Job Name
+#PBS -N bench 
+### Project code - put your our own here
+#PBS -A UCUD0004 
+#PBS -l walltime=2:00:00
+#PBS -q regular
+### Merge output and error files
+#PBS -j oe
+### Select 2 nodes with 36 CPUs and 1 MPI process on each
+#PBS -l select=2:ncpus=36:mpiprocs=1
+
+module load ncarenv intel ncarcompilers mpt 
+
+mpiexec_mpt -np 2 examples/mpi_hello_world.exe 
+mpiexec_mpt -np 2 examples/mpi/pt2pt/osu_bw 
+mpiexec_mpt -np 2 examples/mpi/pt2pt/osu_latency 
