@@ -1,5 +1,7 @@
 #!/bin/bash
-# A simple single job template
+# alderaan_single.sh
+# A simple single core job template
+# Jan Mandel, December 2021
 #SBATCH --job-name=mpi_hello_single
 #SBATCH --partition=math-alderaan
 #SBATCH --time=1:00:00                    # Max wall-clock time

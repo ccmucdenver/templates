@@ -1,11 +1,11 @@
 #!/bin/bash
-# A a more general MPI job template
+# alderaan_mpi_simple.sh
+# A simple MPI job template
+# Jan Mandel, December 8, 2020
 #SBATCH --job-name=mpi_hello
 #SBATCH --partition=math-alderaan
-#SBATCH --nodes=2                   # Number of requested nodes
-#SBATCH --time=1:00:00              # Max wall-clock time
-#SBATCH --ntasks=5                  # Total number of tasks over all nodes, max 64*nodes
+#SBATCH --time=1:00:00                    # Max wall-clock time
+#SBATCH --ntasks=360                      # Total number of MPI processes, no need for --nodes
 
-mpirun -np 10 examples/mpi_hello_world.exe # replace by your own executable and number of processors
-# do not use more processors that the number of tasks requested
+mpirun examples/mpi_hello_world.exe       # replace by your own executable, no need for -np
 
