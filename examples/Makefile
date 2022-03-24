@@ -12,7 +12,7 @@ hello_world_fortran.exe: hello_world_fortran.f90
 	$(FC) -o hello_world_fortran.exe hello_world_fortran.f90
 
 mpi:
-	wget https://mvapich.cse.ohio-state.edu/download/mvapich/$(BENCH).tgz	
+	wget --no-check-certificate https://mvapich.cse.ohio-state.edu/download/mvapich/$(BENCH).tgz	
 	tar xvfz $(BENCH).tgz
 	cd $(BENCH); ./configure CC=`which mpicc` CXX=`which mpicxx` 
 	cd $(BENCH); make
