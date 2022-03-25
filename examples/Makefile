@@ -1,6 +1,6 @@
-EXECS=mpi_hello_world.exe hello_world_fortran.exe
+EXECS=mpi_hello_world.exe 
 MPICC?=mpicc
-FC?=gfortran
+FC=gfortran
 BENCH=osu-micro-benchmarks-5.8
 
 all: ${EXECS} mpi
