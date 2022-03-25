@@ -12,8 +12,8 @@ rm -f $log
 date > $log
 echo mpirun -np 2 examples/mpi_hello_world.exe >> $log
 mpirun -np 2 examples/mpi_hello_world.exe >> $log
-echo mpirun -np 2 examples/hello_world_fortran.exe >> $log
-mpirun -np 2 examples/hello_world_fortran.exe >> $log
+# echo mpirun -np 2 examples/hello_world_fortran.exe >> $log
+# mpirun -np 2 examples/hello_world_fortran.exe >> $log
 echo mpirun -np 2 examples/mpi/pt2pt/osu_bw >>  $log
 mpirun -np 2 examples/mpi/pt2pt/osu_bw >>  $log
 echo mpirun -np 2 examples/mpi/pt2pt/osu_latency >> $log
