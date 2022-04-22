@@ -12,8 +12,6 @@ log=run_alderaan_large.log
 rm -f $log
 date > $log
 mpirun examples/mpi_hello_world.exe >> $log
-mpirun examples/mpi/pt2pt/osu_bw >>  $log
-mpirun examples/mpi/pt2pt/osu_latency >> $log
 date >> $log
 echo DONE >> $log
 
