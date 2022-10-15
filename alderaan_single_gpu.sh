@@ -3,6 +3,7 @@
 # Jan Mandel, March 2022 
 #SBATCH --job-name=gpu
 #SBATCH --partition=math-alderaan-gpu
+#SBATCH --gres=gpu:a100:1
 #SBATCH --time=1-1:00:00                    # Max wall-clock time - one day one hour
 #SBATCH --ntasks=1                        # number of cores 
 
