@@ -1,4 +1,4 @@
-EXECS=mpi_hello_world.exe hello_world_fortran.exe mpi_hello_world_fortran.exe
+EXECS=mpi_hello_world.exe hello_world_fortran.exe mpi_hello_world_fortran.exe mpi_spawn_fortran.exe
 MPICC?=mpicc
 FC=mpif90
 BENCH=osu-micro-benchmarks-5.8
@@ -21,6 +21,9 @@ mpi_hello_world_fortran_sub.o: mpi_hello_world_fortran_sub.f90
 mpi_hello_world_fortran.exe: mpi_hello_world_fortran.f90 mpi_hello_world_fortran_sub.o
 	$(FC) -o mpi_hello_world_fortran.exe mpi_hello_world_fortran.f90 mpi_hello_world_fortran_sub.o
 
+
+mpi_spawn_fortran.exe: mpi_spawn_fortran.f90 mpi_hello_world_fortran_sub.o
+	$(FC) -o mpi_spawn_fortran.exe mpi_spawn_fortran.f90 mpi_hello_world_fortran_sub.o
 
 mpi:
 	wget --no-check-certificate https://mvapich.cse.ohio-state.edu/download/mvapich/$(BENCH).tgz	

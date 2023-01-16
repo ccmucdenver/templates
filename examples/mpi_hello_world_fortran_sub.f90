@@ -8,7 +8,7 @@ subroutine mpi_hello_world_sub
 
   call MPI_COMM_SIZE(comm,size,ierror)
   if (ierror.ne.0)then 
-  print *,'mpi_comm_size comm=', comm, ' size=',size,' ierror=',ierror
+  print *,'mpi_comm_size=', comm, ' size=',size,' ierror=',ierror
   stop 1
   endif
 
