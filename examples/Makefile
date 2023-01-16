@@ -1,4 +1,4 @@
-EXECS=mpi_hello_world.exe hello_world_fortran.exe
+EXECS=mpi_hello_world.exe hello_world_fortran.exe mpi_hello_world_fortran.exe
 MPICC?=mpicc
 FC=mpif90
 BENCH=osu-micro-benchmarks-5.8
@@ -10,6 +10,10 @@ mpi_hello_world.exe: mpi_hello_world.c Makefile
 
 hello_world_fortran.exe: hello_world_fortran.f90
 	$(FC) -o hello_world_fortran.exe hello_world_fortran.f90
+
+mpi_hello_world_fortran.exe: mpi_hello_world_fortran.f90
+	$(FC) -o mpi_hello_world_fortran.exe mpi_hello_world_fortran.f90
+
 
 mpi:
 	wget --no-check-certificate https://mvapich.cse.ohio-state.edu/download/mvapich/$(BENCH).tgz	
