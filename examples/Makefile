@@ -11,8 +11,15 @@ mpi_hello_world.exe: mpi_hello_world.c Makefile
 hello_world_fortran.exe: hello_world_fortran.f90
 	$(FC) -o hello_world_fortran.exe hello_world_fortran.f90
 
-mpi_hello_world_fortran.exe: mpi_hello_world_fortran.f90
-	$(FC) -o mpi_hello_world_fortran.exe mpi_hello_world_fortran.f90
+#mpi_hello_world_fortran.exe: mpi_hello_world_fortran.f90
+##	$(FC) -o mpi_hello_world_fortran.exe mpi_hello_world_fortran.f90
+
+mpi_hello_world_fortran_sub.o: mpi_hello_world_fortran_sub.f90
+	$(FC) -c -o mpi_hello_world_fortran_sub.o mpi_hello_world_fortran_sub.f90
+
+
+mpi_hello_world_fortran.exe: mpi_hello_world_fortran.f90 mpi_hello_world_fortran_sub.o
+	$(FC) -o mpi_hello_world_fortran.exe mpi_hello_world_fortran.f90 mpi_hello_world_fortran_sub.o
 
 
 mpi:
