@@ -7,5 +7,4 @@
 #SBATCH --time=1:00:00                    # Max wall-clock time
 #SBATCH --ntasks=1                        # number of cores, leave at 1 
 
-examples/mpi_hello_world.exe          # replace by your own executable
-
+echo hello from node `hostname`
