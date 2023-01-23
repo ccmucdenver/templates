@@ -2,7 +2,7 @@ program mpi_spawn_fortran
 
   use mpi
   integer, parameter:: n=1
-  CHARACTER(len=40) COMMAND(n), ARGV(n)
+  CHARACTER(len=40) COMMAND, ARGV(n)
   INTEGER INFO, MAXPROCS, ROOT, COMM, INTERCOMM, &
           ARRAY_OF_ERRCODES(n),IERROR
 
@@ -14,11 +14,9 @@ program mpi_spawn_fortran
 
   call mpi_hello_world_sub
 
-  command(1)="mpi_hello_world_fortran.exe"
-  argv(1)=" "
-  do i=2,n
-    command(i)=command(1)
-    argv(i)=argv(1)
+  command="mpi_hello_world_fortran.exe"
+  do i=1,n
+    argv(i)=" "
   enddo
 
   maxprocs = n 

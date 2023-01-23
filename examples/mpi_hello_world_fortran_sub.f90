@@ -24,6 +24,6 @@ subroutine mpi_hello_world_sub
   stop 1
   endif
 
-  print *,'rank ',rank,' of ',size, ' at ',hostname 
+  print *,'communicator ',comm,' rank ',rank,' of ',size, ' at ',hostname 
 
 end subroutine  mpi_hello_world_sub
