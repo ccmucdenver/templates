@@ -5,7 +5,7 @@
 #SBATCH --job-name=mpi_hello
 #SBATCH --partition=compute
 #SBATCH --time=1:00:00                    # Max wall-clock time
-#SBATCH --ntasks=384                      # Total number of MPI processe
+#SBATCH --ntasks=192                      # Total number of MPI processe
 #SBATCH --nodes=2
 
 which mpirun
