@@ -30,3 +30,12 @@ sbatch run_alderaan.slurm
 and look for the file run_alderaan.log
 Similarly on other machnines.
 
+## Test for core and GPU separation
+
+For GPU visibility:
+
+     sbatch alderaan_check_cgroups.sh
+
+For CPU separation:
+
+     sbatch alderaan_test_core_isolation.sh
