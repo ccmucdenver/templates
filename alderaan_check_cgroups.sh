@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=check_cgroups
 #SBATCH --partition=math-alderaan-gpu
-#SBATCH --reservation=GPU_TEST
-#SBATCH --gres=gpu:a100:2
+#SBATCH --reservation=TEST_GPU
+#SBATCH --gres=gpu:a100:1
 #SBATCH --cpus-per-task=4
 #SBATCH --time=00:05:00
 #SBATCH --output=slurm-%j.out
