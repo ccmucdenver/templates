@@ -21,14 +21,16 @@ int main(int argc, char *argv[]) {
     size_t mem_size = (size_t)mem_in_mb * 1024 * 1024;
 
     // Allocate memory
+    printf("Allocating %d MB (%zu bytes) of memory.\n", mem_in_mb, mem_size);
     char *buffer = (char *)malloc(mem_size);
     if (buffer == NULL) {
         perror("Memory allocation failed");
         return EXIT_FAILURE;
     }
-    printf("Allocated %d MB (%zu bytes) of memory.\n", mem_in_mb, mem_size);
+    printf("Allocated the memory.\n");
 
     // Initialize the allocated memory
+    printf("Initializing the allocated memory.\n");
     memset(buffer, 0, mem_size);
     printf("Initialized the allocated memory.\n");
 
