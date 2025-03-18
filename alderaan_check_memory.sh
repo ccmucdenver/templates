@@ -7,19 +7,22 @@
 # 1.  run on math-alderaan-h01
 ##SBATCH --reservation=TEST_GPU
 #SBATCH --partition=math-alderaan
-#SBATCH --mem=500000
+##SBATCH --mem=500000
 
 ## 2. run on math-alderaan-c05 
-#SBATCH --reservation=TEST_CORE
+##SBATCH --reservation=TEST_CORE
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=50000
+#SBATCH --requeue
 
 #SBATCH --time=00:05:00
 #SBATCH --output=slurm-%j.out
 # memory is limitd to 4096MB per cpu by default 
 # override by --mem
 
-gcc -o memcheck.exe memcheck.c  
+hostname
+
+#gcc -o memcheck.exe memcheck.c  
 
 ./memcheck.exe 10000 5
 ./memcheck.exe 20000 5
