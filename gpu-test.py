@@ -8,7 +8,7 @@ else:
     print(f"GPUs found: {len(gpus)}")
     for gpu in gpus:
         print(" -", gpu.name)
-    tf.config.experimental.set_memory_growth(gpus[0], True)
+        tf.config.experimental.set_memory_growth(gpu, True)
 
     # Simple matrix multiplication
     import numpy as np
