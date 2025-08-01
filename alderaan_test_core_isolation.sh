@@ -5,7 +5,6 @@
 ## scontrol create reservation=TEST_GPU nodes=math-alderaan-h01 starttime=now duration=infinite user=test flags=OVERLAP 
 ## scontrol show reservation=TEST_GPU
 #SBATCH --partition=math-alderaan-gpu
-#SBATCH --reservation=TEST_GPU
 #SBATCH --cpus-per-task=4
 #SBATCH --ntasks=1
 #SBATCH --time=00:05:00

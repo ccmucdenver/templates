@@ -12,7 +12,7 @@
 ## 2. run on math-alderaan-c05 
 ##SBATCH --reservation=TEST_CORE
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=50000
+##SBATCH --mem=50000
 #SBATCH --requeue
 
 #SBATCH --time=00:05:00
@@ -24,6 +24,9 @@ hostname
 
 #gcc -o memcheck.exe memcheck.c  
 
+
+./memcheck.exe 1000 50 
+./memcheck.exe 5000 50
 ./memcheck.exe 10000 5
 ./memcheck.exe 20000 5
 ./memcheck.exe 100000 5

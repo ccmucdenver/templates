@@ -1,12 +1,13 @@
 #!/bin/bash
-# A simple single core job template with gpu
-# Jan Mandel, March 2022 
-#SBATCH --job-name=gpu
+# A simple single core job template with gpu cuda12
+# Jan Mandel, July 2025 
+#SBATCH --job-name=gpu-cuda12
 #SBATCH --partition=math-alderaan-gpu-cuda12
-#SBATCH --gres=gpu:a100:2
-#SBATCH --time=0-1:00:00                    # Max wall-clock time - one day one hour
+#SBATCH --gres=gpu:a100:1
+#SBATCH --time=0-0:01:00                  # Max wall-clock time - one hour
 #SBATCH --ntasks=1                        # number of cores 
 
-# run tensorflow in singularity container
-# redirect output to a file so that it can be inspected before the end of the job
-singularity exec --nv /storage/singularity/tensorflow.sif python3 gpucode.py 
+source ~/.bashrc
+conda activate tf-gpu-test
+
+python gpu-test.py
