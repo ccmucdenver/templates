@@ -39,3 +39,40 @@ For GPU visibility:
 For CPU separation:
 
      sbatch alderaan_test_core_isolation.sh
+
+## Gurobi on Alderaan
+
+First follow the [Gurobi installation and license instructions](https://ccm-docs.readthedocs.io/en/latest/gurobi/).
+Use the shared examples directly; no cloning or script edits are needed.
+
+In a JupyterHub terminal:
+
+```bash
+conda activate gurobi
+bash /shared/templates/examples/gurobi/simple.sh
+```
+
+Expected result: `x=2, y=2, objective=10`.
+
+For Slurm, submit from your home directory so the output file is writable:
+
+```bash
+conda activate gurobi
+cd ~
+sbatch /shared/templates/examples/gurobi/simple.slurm
+```
+
+Output goes to `~/gurobi-JOBID.out`, where `JOBID` is the submitted job number.
+
+For the optional notebook, first register the **Python (gurobi)** kernel as
+explained in the installation guide. Copy the notebook into your home directory
+so you can save its output:
+
+```bash
+cp -i /shared/templates/examples/gurobi/simple.ipynb ~/gurobi-test.ipynb
+```
+
+Open `gurobi-test.ipynb` in JupyterLab, select **Python (gurobi)**, and run the
+code cell. Shut down the kernel when finished. A WLS token can still count
+toward the session limit for up to five minutes after the environment closes,
+with default settings.
